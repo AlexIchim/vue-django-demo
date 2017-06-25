@@ -1,10 +1,12 @@
+// src/components/TodoList.vue
+
 <template>
   <div id="todolist">
     <ul>
-      <li v-for="todo in todos">
-        <todo v-bind:todo="todo" v-bind:id="todo.id">
-        </todo>
-      </li>
+      <todo v-for="todo in todos"
+            v-bind:todo="todo" 
+            v-bind:key="todo.id">
+      </todo>
     </ul>
   </div>
 </template>
@@ -16,12 +18,9 @@ export default {
   components: {
     Todo
   },
-  data: function () {
-    return {
-      todos: [
-        { text: 'Learn Vue' },
-        { text: 'Do hard things' }
-      ]
+  computed: {
+    todos () {
+      return this.$store.state.todos
     }
   }
 }

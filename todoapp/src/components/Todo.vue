@@ -1,7 +1,9 @@
+// src/components/Todo.vue
+
 <template>
-    <p>
-        {{ todo.text }}
-    </p>
+  <li>
+    {{ todo.text }}
+  </li>
 </template>
 
 <script>
